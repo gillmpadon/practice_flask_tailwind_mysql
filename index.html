@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        .fullheight{
+            height: 100%;
+        }
+        .border-none{
+            border: none;
+        }
+        .focus-outline-none:focus {
+            outline: none;
+        }
+        .focus-border-none:focus {
+            border: none;
+        }
+        table tr, td{
+            border: 5px solid white;
+        }
+        table td{
+            padding: .5em;
+            color: white;
+        }
+        tr:nth-child(even){
+            background: #30B4ED;
+        }
+        tr:nth-child(odd){
+            background: #A9D7EA;
+        }
+
+        .notreadable{
+            display: none;
+        }
+        
+    </style>
+    </style>
+</head>
+<body>
+    <div class="w-full h-full">
+        <div class="flex flex-row justify-between items-center bg-violet-600 px-5 ">
+            <div class="h-16  flex flex-row gap-2 items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 107 104" fill="none">
+                    <path d="M53.5 10.4C49.7431 10.3992 46.0522 11.3597 42.7983 13.1849C39.5444 15.0102 36.8423 17.6359 34.9635 20.798C33.0846 23.9601 32.0954 27.5473 32.0952 31.1989C32.095 34.8504 33.0838 38.4377 34.9623 41.6H18.3131C14.108 41.6 10.7 44.9124 10.7 48.9996C10.7 56.691 13.8435 64.0674 19.4391 69.506C25.0346 74.9446 32.6237 78 40.537 78H47.3475C46.1071 75.1104 45.4688 72.0103 45.4697 68.8792C45.4697 62.6496 49.0435 57.3872 53.2967 53.8408C57.657 50.1956 63.4885 47.6372 69.8817 46.8624C71.476 46.6648 73.0596 46.5816 74.6058 46.5712C73.4676 45.3833 72.1465 44.3746 70.6896 43.5812C71.1711 42.9468 71.6258 42.2864 72.0271 41.6H81.1381C86.5577 41.6 90.95 37.336 90.95 32.0684C90.95 28.7144 88.1573 26 84.7066 26H74.2259C73.0379 21.5352 70.3578 17.5804 66.6063 14.7567C62.8549 11.9331 58.2448 10.4006 53.5 10.4ZM93.625 54.6C94.0804 54.6005 94.5282 54.7139 94.9259 54.9297C95.3236 55.1454 95.658 55.4562 95.8975 55.8328C96.137 56.2093 96.2736 56.639 96.2944 57.0812C96.3153 57.5234 96.2196 57.9634 96.0165 58.3596C95.6544 59.021 95.2654 59.6681 94.8502 60.2992L94.7592 60.4344C94.251 61.2404 93.6571 62.1764 93.0258 63.2528C91.2134 66.2824 89.8295 69.5357 88.9117 72.9248C88.0771 75.8212 86.9536 79.716 84.9794 82.9972C83.7061 85.1188 82.0048 87.1416 79.6508 88.6288C77.2754 90.1368 74.3757 91 70.8875 91C65.2165 91 61.2147 88.2232 58.727 85.618C57.5166 84.3424 56.4709 82.928 55.6133 81.406C52.3765 84.5936 49.9209 88.1764 47.8665 92.1648C47.7107 92.4728 47.4939 92.7477 47.2283 92.9738C46.9627 93.1999 46.6538 93.3727 46.3192 93.4821C45.9846 93.5916 45.631 93.6356 45.2789 93.6117C44.9267 93.5877 44.5829 93.4962 44.2673 93.3425C43.9517 93.1888 43.6705 92.9758 43.4399 92.716C43.2094 92.4561 43.034 92.1545 42.924 91.8285C42.814 91.5024 42.7714 91.1584 42.7988 90.8163C42.8262 90.4742 42.923 90.1408 43.0836 89.8352C47.1175 81.9988 52.6226 75.5612 61.4608 70.5432C65.0132 68.3852 68.9508 66.4716 73.2201 64.8128C73.5532 64.6908 73.8579 64.5054 74.1163 64.2674C74.3747 64.0295 74.5817 63.7438 74.725 63.4271C74.8684 63.1104 74.9453 62.7691 74.9512 62.4232C74.9572 62.0773 74.892 61.7336 74.7595 61.4125C74.6271 61.0914 74.43 60.7991 74.1799 60.553C73.9298 60.3068 73.6316 60.1116 73.3029 59.9789C72.9742 59.8461 72.6215 59.7785 72.2655 59.7799C71.9096 59.7814 71.5575 59.8518 71.2299 59.9872C63.5741 62.9616 56.6512 66.8148 51.0283 71.5832C50.8926 70.6879 50.8246 69.7842 50.825 68.8792C50.825 64.9064 52.4835 61.0168 55.854 57.9592C59.2085 54.9172 64.1251 52.8008 70.5558 52.0208C75.8274 51.3874 81.1723 51.6549 86.349 52.8112C88.1038 53.196 89.6339 53.612 90.8484 53.9448L91.3566 54.0852C92.0147 54.262 92.5336 54.3972 92.9563 54.4908C93.1631 54.535 93.372 54.5697 93.5822 54.5948L93.625 54.6Z" fill="white"/>
+                </svg>
+                <p class="text-2xl text-white">DYNAMIC SKILLS PROFILES</p>
+            </div>
+
+            <div class="w-12 h-12 rounded-full">
+                <img class="rounded-full w-12 h-12" src="https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/326221771_707495330977660_2857848135617387092_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=9534ce&_nc_eui2=AeE6ZGaZudKw2Q9MNTlDLvQBgoC323XUIiCCgLfbddQiIH8D2VgPztVKgFCE0AmVh5z3PLSibfFm2MOwuylw66UX&_nc_ohc=9nSN8r6jtuAAX8hr2VD&_nc_ht=scontent.fmnl13-2.fna&oh=00_AfCwbRHyqvOz9xX9h4G0yXkELoOHv9-5Yh0hT1_5uOvRiw&oe=659308FE" alt="">
+            </div>
+
+        </div>
+        <div class="w-full h-full flex flex-row ">
+            <div class="flex flex-col justify-center items-center fullheight bg-violet-600 w-64 relative">
+                <div class="flex flex-row justify-center items-center gap-2 absolute top-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48" fill="none">
+                        <path d="M24 45.5C35.8741 45.5 45.5 35.8741 45.5 24C45.5 12.1259 35.8741 2.5 24 2.5C12.1259 2.5 2.5 12.1259 2.5 24C2.5 35.8741 12.1259 45.5 24 45.5Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M37.5 14L30.75 34L24 14L17.25 34L10.5 14" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    <p class="text-xl text-white">Dashboard</p>
+                </div>
+            </div>
+            <div class="table_content w-full h-full flex flex-row">
+                <div class="w-3/4  p-5 ">
+                    <div class=" bg-slate-200 p-2">
+                        <div class="flex flex-row gap-2 justify-evenly">
+                            <div class="flex flex-row justify-between">
+                                <div class="flex flex-row bg-violet-600 rounded-lg p-2 text-white justify-center items-center">
+                                    <p>From: </p>
+                                    <input id="from_id" class="bg-transparent border-none focus-outline-none focus-border-none " type="text" >
+                                </div>
+                            </div>
+                            <div class="flex flex-row justify-between">
+                                <div class="flex flex-row bg-violet-600 rounded-lg p-2 text-white justify-center items-center">
+                                    <p>To: </p>
+                                    <input id="to_id" class="bg-transparent border-none focus-outline-none focus-border-none " type="text" >
+                                </div>
+                            </div>
+                            <div class="flex flex-row justify-between">
+                                <div class="flex flex-row bg-violet-600 rounded-lg p-2 text-white justify-center items-center">
+                                    <p>Employee ID: </p>
+                                    <input id="emp_id" class="bg-transparent border-none focus-outline-none focus-border-none " type="text" >
+                                </div>
+                            </div>
+                            <div class="flex flex-row justify-between">
+                                <div class="flex flex-row bg-violet-600 rounded-lg p-2 text-white justify-center items-center">
+                                    <button class="bg-transparent border-none focus-outline-none focus-border-none " onclick="readable()">Readable</button>
+                                </div>
+                            </div>
+                            <div class="flex flex-row justify-between">
+                                <div class="flex flex-row bg-violet-800 rounded-lg p-2 text-white justify-center items-center">
+                                    <button class="bg-transparent border-none focus-outline-none focus-border-none " onclick="searchEmployees()">Search</button>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                    <table class="w-full border" id="table">
+                        <tr>
+                            <td>Employee ID</td>
+                            <td>SKill ID</td>
+                            <td>Skill Level</td>
+                            <td>Last Updated</td>
+                        </tr>
+                     
+                    </table>
+                </div>
+                <div class="w-1/4 border p-2 flex flex-col justify-center">
+                    <div class="">
+                        <img class="h-72 w-72 object-fit rounded-lg"  src="https://www.wheniscalendars.com/wp-content/uploads/2022/12/december-2023-calendar-printable-with-holidays-3-amagro.png" alt="">
+                    </div>
+                    <div class="">
+                        <img class="h-72 w-72 object-cover rounded-lg" src="https://holidaytoday.org/wp-content/uploads/2023/05/december-holidays.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function createItem(item){
+            console.log(item);
+            const { employees_id , last_updated, name, skill_id, skill_level, skill_type} = item
+            const table = document.getElementById("table");
+            const tr = document.createElement("tr");
+            const td1 = document.createElement("td");
+            const td2 = document.createElement("td");
+            const td3 = document.createElement("td");
+            const td4 = document.createElement("td");
+            td1.innerHTML = `<span class="readable">${name}</span><span class="notreadable">${employees_id}</span>`
+            td2.innerHTML = `<span class="readable1">${skill_type}</span><span class="notreadable1">${skill_id}</span>`
+            td3.textContent = skill_level
+            td4.textContent = last_updated
+            tr.appendChild(td1)
+            tr.appendChild(td2)
+            tr.appendChild(td3)
+            tr.appendChild(td4)
+            table.appendChild(tr)
+            
+        }
+        function searchEmployees(){
+            const emp_id = document.getElementById('emp_id').value
+            const from_id = document.getElementById('from_id').value
+            const to_id = document.getElementById('to_id').value
+
+
+
+            const table = document.getElementById("table");
+            const rowsToDelete = document.querySelectorAll("#table tr:not(:first-child)");
+            rowsToDelete.forEach(row => {
+                row.remove();
+            });
+                fetch(`http://127.0.0.1:5000?from_id=${from_id}&to_id=${to_id}&emp_id=${emp_id}`,{
+                method:'GET',
+            })
+            .then(response => response.json())
+            .then(result =>{
+                console.log(result.data.length)
+                if(result.data.length>0){
+                    const data = result.data
+                    data.map(item=>{
+                        createItem(item)
+                    })
+                }else{
+                const str = `   <tr>
+                                <td colspan="4" style="text-align: center;">
+                                    No Data
+                                </td>
+                            </tr>`
+                table.innerHTML = str
+                
+                }
+            })
+        }
+
+        let visibility = true
+            function readable() {
+        const readableElements = document.querySelectorAll(".readable");
+        const readableElements1 = document.querySelectorAll(".readable1");
+        const notReadableElements = document.querySelectorAll(".notreadable");
+        const notReadableElements1 = document.querySelectorAll(".notreadable1");
+
+        if (visibility) {
+            readableElements.forEach(item => {
+                item.style.display = "none";
+            });
+            notReadableElements.forEach(item => {
+                item.style.display = "inline"; // Change this to the desired display property
+            });
+            readableElements1.forEach(item => {
+                item.style.display = "none";
+            });
+            notReadableElements1.forEach(item => {
+                item.style.display = "inline"; // Change this to the desired display property
+            });
+            visibility = false
+        } else {
+            readableElements.forEach(item => {
+                item.style.display = "inline"; // Change this to the desired display property
+            });
+            notReadableElements.forEach(item => {
+                item.style.display = "none";
+            });
+            readableElements1.forEach(item => {
+                item.style.display = "inline"; // Change this to the desired display property
+            });
+            notReadableElements1.forEach(item => {
+                item.style.display = "none";
+            });
+            visibility = true
+
+        }
+    }
+
+
+    </script>
+</body>
+</html>

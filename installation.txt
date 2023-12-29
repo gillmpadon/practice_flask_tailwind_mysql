@@ -1,0 +1,3 @@
+python -m venv env
+
+pip install Flask flask-cors mysql-connector-python
