@@ -38,7 +38,7 @@
             background: #A9D7EA;
         }
 
-        .notreadable{
+        .notreadable, .notreadable1{
             display: none;
         }
         
@@ -70,7 +70,7 @@
                     <p class="text-xl text-white">Dashboard</p>
                 </div>
             </div>
-            <div class="table_content w-full h-full flex flex-row">
+            <div class="table_content w-full h-[90%] flex flex-row">
                 <div class="w-3/4  p-5 ">
                     <div class=" bg-slate-200 p-2">
                         <div class="flex flex-row gap-2 justify-evenly">
@@ -105,16 +105,17 @@
     
                         </div>
                     </div>
-                    <table class="w-full border" id="table">
-                        <tr>
-                            <td>Employee ID</td>
-                            <td>SKill ID</td>
-                            <td>Skill Level</td>
-                            <td>Last Updated</td>
-                        </tr>
-                     
-                    </table>
-                </div>
+                    <div class="w-full h-[43em]" style="overflow: scroll;">
+                        <table class="w-full border" id="table" >
+                            <tr>
+                                <td>Employee ID</td>
+                                <td>SKill ID</td>
+                                <td>Skill Level</td>
+                                <td>Last Updated</td>
+                            </tr>
+                         
+                        </table></div>
+                    </div>
                 <div class="w-1/4 border p-2 flex flex-col justify-center">
                     <div class="">
                         <img class="h-72 w-72 object-fit rounded-lg"  src="https://www.wheniscalendars.com/wp-content/uploads/2022/12/december-2023-calendar-printable-with-holidays-3-amagro.png" alt="">
@@ -147,40 +148,52 @@
             table.appendChild(tr)
             
         }
-        function searchEmployees(){
-            const emp_id = document.getElementById('emp_id').value
-            const from_id = document.getElementById('from_id').value
-            const to_id = document.getElementById('to_id').value
+        function searchEmployees() {
+    const emp_id = document.getElementById('emp_id').value;
+    const from_id = document.getElementById('from_id').value;
+    const to_id = document.getElementById('to_id').value;
 
+    const table = document.getElementById("table");
+    const rowsToDelete = document.querySelectorAll("#table tr:not(:first-child)");
+    rowsToDelete.forEach(row => {
+        row.remove();
+    });
 
-
-            const table = document.getElementById("table");
-            const rowsToDelete = document.querySelectorAll("#table tr:not(:first-child)");
-            rowsToDelete.forEach(row => {
-                row.remove();
-            });
-                fetch(`http://127.0.0.1:5000?from_id=${from_id}&to_id=${to_id}&emp_id=${emp_id}`,{
-                method:'GET',
-            })
-            .then(response => response.json())
-            .then(result =>{
-                console.log(result.data.length)
-                if(result.data.length>0){
-                    const data = result.data
-                    data.map(item=>{
-                        createItem(item)
-                    })
-                }else{
-                const str = `   <tr>
-                                <td colspan="4" style="text-align: center;">
-                                    No Data
-                                </td>
-                            </tr>`
-                table.innerHTML = str
-                
-                }
-            })
+    fetch(`http://127.0.0.1:5000?from_id=${from_id}&to_id=${to_id}&emp_id=${emp_id}`, {
+        method: 'GET',
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok.');
         }
+        return response.json();
+    })
+    .then(result => {
+        console.log(result.data.length);
+        if (result.data.length > 0) {
+            const data = result.data;
+            data.map(item => {
+                createItem(item);
+            });
+        } else {
+            const str = `<tr>
+                            <td colspan="4" style="text-align: center;">
+                                No Data
+                            </td>
+                        </tr>`;
+            table.innerHTML = str;
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+        const str = `<tr>
+                        <td colspan="4" style="text-align: center;">
+                            Error fetching data. Please try again later.
+                        </td>
+                    </tr>`;
+        table.innerHTML = str;
+    });
+}
 
         let visibility = true
             function readable() {
